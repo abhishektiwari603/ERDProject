@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="ERDTool Category"
+            id="ERDTool">
+      </category>
+      <view
+            name="DB List"
+            icon="icons/sample.gif"
+            category="ERDTool"
+            class="com.databases.erd.erdtool.views.DBListView"
+            id="erdtool.views.DBListView"
+            >
+      </view>
+      <category
+            id="com.databases.erd.ERDToolPhyname"
+            name="Sample Category">
+      </category>
+      <view
+            category="com.databases.erd.ERDToolPhyname"
+            class="com.databases.erd.erdtool.views.PhysicalName"
+            icon="icons/sample.gif"
+            id="com.databases.erd.erdtool.views.PhysicalName"
+            name="Table Physical Name">
+      </view>
+   </extension>
+   
+   <extension 
+		point="org.eclipse.ui.views">
+	<category 
+  		name="Migration" 
+  		id="DbMigration" /> 
+  <view 
+  		name=" Field Property" 
+  		icon="icons/sample.gif" 
+  		category="DBMigration" 
+  		class="com.databases.erd.erdtool.views.PropertyView" 
+  		id="dbmigration.views.ERDPropertyView" /> 
+  </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="ERDTool Category"
+            id="com.databases.erd.ERDTool.commands.category">
+      </category>
+      <command
+            name="Open ERDTool"
+            categoryId="com.databases.erd.ERDTool.commands.category"
+            id="com.databases.erd.ERDTool.commands.sampleCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.databases.erd.ERDTool.commands.sampleCommand"
+            class="com.databases.erd.erdtool.handlers.OpenERDHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.databases.erd.ERDTool.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+7"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               label="ERD Tool"
+               mnemonic="M"
+               id="com.databases.erd.ERDTool.menus.sampleMenu">
+            <command
+                  commandId="com.databases.erd.ERDTool.commands.sampleCommand"
+                  mnemonic="S"
+                  id="com.databases.erd.ERDTool.menus.sampleCommand">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.databases.erd.ERDTool.toolbars.sampleToolbar">
+            <command
+                  commandId="com.databases.erd.ERDTool.commands.sampleCommand"
+                  icon="icons/sample.gif"
+                  tooltip="Say hello world"
+                  id="com.databases.erd.ERDTool.toolbars.sampleCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+  <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.databases.erd.erdtool.editors.ERDEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=""
+            icon="icons/sample.gif"
+            id="erdtool.editors.ERDEditor"
+            name="ERD Editor ">
+      </editor>
+       <editor
+            class="com.databases.erd.erdtool.editors.DBMetaInfoEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions=""
+            icon="icons/sample.gif"
+            id="erdtool.editors.MigrateEditor"
+            name="Migrate Database ">
+      </editor>
+   </extension>
+  <extension
+        point="org.eclipse.ui.perspectives">
+     <perspective
+           class="com.databases.erd.erdtool.perspectives.ERD"
+           icon="icons/releng_gears.gif"
+           id="com.databases.erd.erdtool.perspectives.ERD"
+           name="ERD Tool">
+     </perspective>
+ </extension>
+  <extension
+        point="org.eclipse.ui.perspectiveExtensions">
+     <perspectiveExtension
+           targetID="org.eclipse.jdt.ui.JavaPerspective">
+        <view
+              id="com.databases.erd.erdtool.views.PhysicalName"
+              ratio="0.5"
+              relationship="right"
+              relative="org.eclipse.ui.views.ProblemView">
+        </view>
+     </perspectiveExtension>
+  </extension>
+  <extension
+        point="org.eclipse.help.contexts">
+     <contexts
+           file="contexts.xml">
+     </contexts>
+  </extension>
+ </plugin>
