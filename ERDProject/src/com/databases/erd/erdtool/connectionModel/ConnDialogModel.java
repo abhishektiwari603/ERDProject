@@ -1,10 +1,5 @@
 package com.databases.erd.erdtool.connectionModel;
 
-/**
- * 
- * @author ABHISHEK
- *
- */
 public class ConnDialogModel 
 {
 	private String dbnameStr,localStr,portnoStr,usernameStr,passwordStr;
