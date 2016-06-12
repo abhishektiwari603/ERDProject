@@ -3,10 +3,11 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="lib"/>
-	<classpathentry kind="lib" path="jt400.jar"/>
-	<classpathentry kind="lib" path="mysql-connector-java-5.1.23-bin.jar"/>
-	<classpathentry kind="lib" path="postgresql-9.4-1201.jdbc4.jar"/>
-	<classpathentry kind="lib" path="sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jt400.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.23-bin.jar"/>
+	<classpathentry kind="lib" path="lib/postgresql-9.4-1201.jdbc4.jar"/>
+	<classpathentry kind="lib" path="lib/sqljdbc4-2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
