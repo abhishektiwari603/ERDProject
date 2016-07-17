@@ -7,7 +7,11 @@ import org.eclipse.draw2d.GridLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.geometry.Insets;
 
-
+/**
+ * 
+ * @author ABHISHEK
+ * @Since Jul 17, 2016
+ */
 public class CompartmentFigure extends Figure 
 {
 	  public CompartmentFigure() 

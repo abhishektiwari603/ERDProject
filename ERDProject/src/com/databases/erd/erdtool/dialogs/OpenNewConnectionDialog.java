@@ -25,7 +25,7 @@ public class OpenNewConnectionDialog extends TitleAreaDialog
     private Combo dbname1;
     private Text local, portno, username, password;
     private Text urlvalue, driverclassvalue;
-    public static ConnDialogModel aon;
+    private static ConnDialogModel connectionModel = new ConnDialogModel();
     private static String URL;
     private static String DRIVER;
 
@@ -227,22 +227,23 @@ public class OpenNewConnectionDialog extends TitleAreaDialog
 
     private void savedata()
     {
-        aon = new ConnDialogModel();
-        aon.setDbnameStr(dbname1.getText());
-        aon.setLocalStr(local.getText());
-        aon.setPortnoStr(portno.getText());
-        aon.setUsernameStr(username.getText());
-        aon.setPasswordStr(password.getText());
+        connectionModel = new ConnDialogModel();
+        connectionModel.setDbnameStr(dbname1.getText());
+        connectionModel.setLocalStr(local.getText());
+        connectionModel.setPortnoStr(portno.getText());
+        connectionModel.setUsernameStr(username.getText());
+        connectionModel.setPasswordStr(password.getText());
     }
 
-    public static ConnDialogModel getObj()
+    public static ConnDialogModel getConnectionModel()
     {
-        return aon;
+        return connectionModel;
     }
 
     //@Override
     protected void okPressed()
     {
+        
         super.okPressed();
     }
 

@@ -135,7 +135,7 @@ public class db2xml
     {
         try
         {
-            conn = new getConnect().mysqlDbConnect(OpenNewConnectionDialog.aon, dbname);
+            conn = new getConnect().mysqlDbConnect(OpenNewConnectionDialog.getConnectionModel(), dbname);
             factory = DocumentBuilderFactory.newInstance();
             builder = factory.newDocumentBuilder();
             doc = builder.newDocument();

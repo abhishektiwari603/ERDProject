@@ -2,10 +2,12 @@ package com.databases.erd.erdtool.Populate;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
-import com.databases.erd.erdtool.NewConnection.getConnect;
+import com.databases.erd.erdtool.connectionModel.ConnDialogModel;
 import com.databases.erd.erdtool.dialogs.OpenNewConnectionDialog;
 import com.databases.erd.erdtool.models.DBModel;
+import com.databases.erd.erdtool.utils.ConnectionUtils;
 import com.mysql.jdbc.Statement;
 
 public class PopulateTree
@@ -15,8 +17,22 @@ public class PopulateTree
 
     public PopulateTree()
     {
-
-        conn = new getConnect().mysqlConnect(OpenNewConnectionDialog.aon);
+        ConnDialogModel connModel = OpenNewConnectionDialog.getConnectionModel();
+        try
+        {
+            conn = ConnectionUtils.getMySQLConnection(connModel.getLocalStr(), connModel.getPortnoStr(),
+                    connModel.getUsernameStr(), connModel.getPasswordStr());
+        }
+        catch (ClassNotFoundException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        catch (SQLException e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     public void populateInitial(DBModel n)

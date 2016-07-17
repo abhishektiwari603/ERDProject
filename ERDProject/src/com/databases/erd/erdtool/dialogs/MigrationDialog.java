@@ -16,6 +16,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+/**
+ * 
+ * @author ABHISHEK
+ * @Since Jul 17, 2016
+ */
 public class MigrationDialog extends TitleAreaDialog
 {
     private Combo targetxt;
