@@ -1,10 +1,7 @@
 package com.databases.erd.erdtool.perspectives;
 
-
 import org.eclipse.ui.IPageLayout;
 import org.eclipse.ui.IPerspectiveFactory;
-
-
 
 /**
  *  This class is meant to serve as an example for how various contributions 
@@ -12,20 +9,21 @@ import org.eclipse.ui.IPerspectiveFactory;
  *  referred to as API constants while others are hardcoded and may be subject 
  *  to change. 
  */
-public class ERD implements IPerspectiveFactory {
+public class ERD implements IPerspectiveFactory
+{
 
-	@SuppressWarnings("unused")
-	private IPageLayout factory;
+    @SuppressWarnings("unused")
+    private IPageLayout factory;
 
-	public ERD() {
-		super();
-	}
+    public ERD()
+    {
+        super();
+    }
 
-	public void createInitialLayout(IPageLayout factory) {
-		this.factory = factory;
-		
-	}
+    public void createInitialLayout(IPageLayout factory)
+    {
+        this.factory = factory;
 
-
+    }
 
 }

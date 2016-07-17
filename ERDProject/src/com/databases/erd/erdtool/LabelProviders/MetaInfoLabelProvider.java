@@ -9,71 +9,69 @@ import org.eclipse.swt.graphics.Image;
 
 import com.databases.erd.erdtool.models.DBMetaInfoModel;
 
-
-
-
-
 public class MetaInfoLabelProvider extends LabelProvider implements ITableLabelProvider
 {
-	private Image checked;
+    private Image checked;
 
-	public MetaInfoLabelProvider() {
-	    // Create the image
-	    try 
-	    {
-	      checked = new Image(null, new FileInputStream("D:/icons/checked.jpg"));
-	    } 
-	    catch (FileNotFoundException e)
-	    {
-	    	System.out.println(e.getMessage());
-	    }
-	  }
-	//@Override
-	public Image getColumnImage(Object model, int index) 
-	
-	{
-		DBMetaInfoModel myModel=(DBMetaInfoModel) model;
-		Image image = null;
-		switch (index)
-		{
-		case 3:
-			if(myModel.isInc())
-				image=checked;
-			break;
+    public MetaInfoLabelProvider()
+    {
+        // Create the image
+        try
+        {
+            checked = new Image(null, new FileInputStream("D:/icons/checked.jpg"));
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println(e.getMessage());
+        }
+    }
 
-		default:
-			break;
-		}
-		return image;
-	}
+    //@Override
+    public Image getColumnImage(Object model, int index)
 
-	//@Override
-	public String getColumnText(Object model, int index)
-	{
-		DBMetaInfoModel myModel=(DBMetaInfoModel) model;
-		String text="";
-		switch (index) 
-		{
-			case 0:
-			text = myModel.getOld_name();
-			break;
-			
-			case 1:
-			text = myModel.getOld_description();
-			break;
-			
-			case 2:
-			text = myModel.getNew_name();
-			break;
-			
-			case 3:
-			text="";
-			break;
-			
-			default:
-			text="Invalid Column Index";
-		}
-		return text;
-	}
-	
+    {
+        DBMetaInfoModel myModel = (DBMetaInfoModel) model;
+        Image image = null;
+        switch (index)
+        {
+            case 3:
+                if (myModel.isInc())
+                    image = checked;
+                break;
+
+            default:
+                break;
+        }
+        return image;
+    }
+
+    //@Override
+    public String getColumnText(Object model, int index)
+    {
+        DBMetaInfoModel myModel = (DBMetaInfoModel) model;
+        String text = "";
+        switch (index)
+        {
+            case 0:
+                text = myModel.getOld_name();
+                break;
+
+            case 1:
+                text = myModel.getOld_description();
+                break;
+
+            case 2:
+                text = myModel.getNew_name();
+                break;
+
+            case 3:
+                text = "";
+                break;
+
+            default:
+                text = "Invalid Column Index";
+        }
+        return text;
+    }
+
 }
